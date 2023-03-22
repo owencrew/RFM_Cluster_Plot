@@ -4,6 +4,7 @@ From customer user data, where RFM scores are calculated with the SQL code:
 
 ``SELECT *,
   CASE 
+  
     WHEN latest_purchase_date >= '2022-01-01' AND latest_purchase_date <= DATE_ADD('2022-01-01', INTERVAL 37 DAY) THEN 1
     WHEN latest_purchase_date > DATE_ADD('2022-01-01', INTERVAL 37 DAY) AND latest_purchase_date <= DATE_ADD('2022-01-01', INTERVAL 73 DAY) THEN 2
     WHEN latest_purchase_date > DATE_ADD('2022-01-01', INTERVAL 73 DAY) AND latest_purchase_date <= DATE_ADD('2022-01-01', INTERVAL 110 DAY) THEN 3
