@@ -2,7 +2,7 @@
 
 From customer user data, where RFM scores are calculated with the SQL code:
 
-`SELECT *,
+``SELECT *,
   CASE 
     WHEN latest_purchase_date >= '2022-01-01' AND latest_purchase_date <= DATE_ADD('2022-01-01', INTERVAL 37 DAY) THEN 1
     WHEN latest_purchase_date > DATE_ADD('2022-01-01', INTERVAL 37 DAY) AND latest_purchase_date <= DATE_ADD('2022-01-01', INTERVAL 73 DAY) THEN 2
@@ -19,4 +19,4 @@ NTILE(10) OVER(ORDER BY LOG(transaction_count)) AS Frequency,
 NTILE(10) OVER(ORDER BY LOG(total_revenue)) AS Monetary
   FROM `prism-2023-c1.Prism_Main.users`
   WHERE transaction_count > 0 
-  AND latest_purchase_date >= '2022-01-01';`
+  AND latest_purchase_date >= '2022-01-01';``
